@@ -1,6 +1,6 @@
 # waterloo-hipster
 
-像JHipster一样可以自动生成Java后端项目和代码的自动化工具，适合创建Spring Boot和Spring Cloud微服务项目。
+类似JHipster可以自动生成Java后端项目和代码的自动化工具，适合创建Spring Boot和Spring Cloud微服务项目。
 
 ## 使用
 
@@ -8,7 +8,7 @@
 
 ### 前提条件
 
-(1) 自动生成项目代码依赖[waterloo-starter-web](https://github.com/waterlu/waterloo-starter-web)项目，这个项目定义了基础类，使用waterloo-hipster前请先下载waterloo-starter-web项目并install到maven库。
+(1) 自动生成项目代码依赖[waterloo-starter-web](https://github.com/waterlu/waterloo-starter-web) 项目，这个项目定义了基础类，使用waterloo-hipster前请先下载waterloo-starter-web项目并install到maven库。
 
 (2) 代码根据数据库表生成，要求每个表都必须有主键。
 
