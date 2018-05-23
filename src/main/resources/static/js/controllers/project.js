@@ -24,11 +24,11 @@ angular.module('app').controller('ProjectController', ['$scope', '$http', '$stat
 
     // 数据库连接
     $scope.dbType = 'MySQL';
-    $scope.dbIP = '192.168.75.159';
+    $scope.dbIP = '';
     $scope.dbPort = '3306';
-    $scope.dbName = 'bookshop_user';
-    $scope.dbUsername = 'zj_admin';
-    $scope.dbPassword = '123456';
+    $scope.dbName = '';
+    $scope.dbUsername = '';
+    $scope.dbPassword = '';
 
     // 数据库表
     $scope.tables = [];
@@ -211,7 +211,7 @@ angular.module('app').controller('ProjectController', ['$scope', '$http', '$stat
         waterloo_web_starter.name = 'waterloo-web';
         waterloo_web_starter.groupId = 'cn.waterlu';
         waterloo_web_starter.artifactId = 'waterloo-starter-web';
-        waterloo_web_starter.version = '1.0.0-SNAPSHOT';
+        waterloo_web_starter.version = '1.0.0';
 
         $scope.dependencies.push(waterloo_web_starter);
     };
