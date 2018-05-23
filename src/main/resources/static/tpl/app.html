@@ -1,0 +1,30 @@
+<header class="navbar navbar-static-top bs-docs-nav" id="top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Waterloo Hipster</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a ui-sref=".project">新建工程</a></li>
+                <li ui-sref-active="active"><a ui-sref=".setting">设置</a></li>
+                <li ui-sref-active="active"><a ui-sref=".about">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div>
+    <div ui-view></div>
+    <footer class="bs-docs-footer">
+        <div class="container">
+            <p>&copy; 2017 - &copy; 2018 Waterlu</p>
+        </div>
+    </footer>
+</div>

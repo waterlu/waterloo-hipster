@@ -1,0 +1,35 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 0px;
+  /*text-align: center;*/
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    margin: 10px 0;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.line-lg {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.line-dashed {
+    backgroud-color: transparent;
+    border-style: dashed !important;
+    border-widht: 0;
+}
+
+.pull-in {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.b-b {
+    border-bottom: 1px solid #dee5e7;
+}
