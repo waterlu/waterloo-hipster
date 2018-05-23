@@ -49,7 +49,7 @@ angular.module('app').controller('ProjectController', ['$scope', '$http', '$stat
     $scope.servicePackage = 'service';
     $scope.daoPackage = 'mapper';
     $scope.entityPackage = 'entity';
-    $scope.dtoPackage = 'dto';
+    $scope.dtoPackage = 'vo';
     $scope.voPackage = 'vo';
 
     // 表类型/主键类型/主表名称/连接字段名称
@@ -58,11 +58,11 @@ angular.module('app').controller('ProjectController', ['$scope', '$http', '$stat
         "Single",
         "SubTable"
     ];
-    $scope.primaryKeyFieldType = 'NONE';
+    $scope.primaryKeyFieldType = 'ID';
     $scope.keyTypeList = [
-        "NONE",
-        "ID",
-        "UUID"
+        "ID"
+        // "NONE",
+        // "UUID"
     ];
     $scope.masterTableName = '';
     $scope.masterFieldName = '';

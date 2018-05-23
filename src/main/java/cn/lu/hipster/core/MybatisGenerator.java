@@ -29,13 +29,8 @@ public class MybatisGenerator implements Generator {
     @Value("${mapper.base.class}")
     private String mapperBaseClass;
 
-    /**
-     * 通用Mapper基类
-     */
-    private final static String MAPPER_INTERFACE_UUID = "cn.zjhf.kingold.cloud.common.mapper.SingleTableMapper," +
-            "cn.zjhf.kingold.cloud.common.mapper.InsertUuidListMapper";
-
-    private final static String MAPPER_INTERFACE_ID = "cn.zjhf.kingold.cloud.common.mapper.SingleTableMapper,";
+    @Value("${entity.base.class}")
+    private String entityBaseClass;
 
     @Autowired
     private MybatisShellCallback shellCallback;
@@ -104,12 +99,13 @@ public class MybatisGenerator implements Generator {
         String insertListClassName = String.format("%s.%s.%sInsertListMapper", basePackage, packageInfo.getDaoPackage(), modelName);
 
         // ID主键，定义InsertListMapper，并指定主键
-        String basicClassName = MAPPER_INTERFACE_ID + insertListClassName;
+//        String basicClassName = MAPPER_INTERFACE_ID + insertListClassName;
 
 //        pluginConfiguration.addProperty("mappers", basicClassName);
         pluginConfiguration.addProperty("mappers", mapperBaseClass);
-
         pluginConfiguration.addProperty("forceAnnotation", "true");
+        pluginConfiguration.addProperty("beginningDelimiter", "`");
+        pluginConfiguration.addProperty("endingDelimiter", "`");
         context.addPluginConfiguration(pluginConfiguration);
 
         // Java实体类
@@ -120,6 +116,10 @@ public class MybatisGenerator implements Generator {
 //        String basePackage = generatorParam.getPackageInfo().getBasePackage();
         String entityPackage = generatorParam.getPackageInfo().getEntityPackage();
         javaModelGeneratorConfiguration.setTargetPackage(basePackage + "." + entityPackage);
+        if (!Strings.isNullOrEmpty(entityBaseClass)) {
+            // 设置实体类的基类
+            javaModelGeneratorConfiguration.addProperty("rootClass", entityBaseClass);
+        }
         context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 
         // Mapper.xml文件

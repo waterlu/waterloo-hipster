@@ -11,8 +11,8 @@ import cn.lu.web.mvc.DBException;
 import cn.lu.web.mvc.ResponseData;
 import cn.lu.web.mvc.ResponseResult;
 import cn.lu.web.vo.InsertGroup;
-import cn.lu.web.api.BaseController;
-import cn.lu.web.api.BaseService;
+import cn.lu.web.base.BaseController;
+import cn.lu.web.base.BaseService;
 
 <#list imports as import>
 import ${import.name};
@@ -31,14 +31,25 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
     @Autowired
     private ${serviceClassName} ${serviceObjectName};
 
+    /**
+     * 获取服务实现类
+     *
+     * @return
+     */
     @Override
     public BaseService<${modelClassName}> getService() {
         return (${serviceClassName}Impl) ${serviceObjectName};
     }
 
+    /**
+     * 更新前需要设置主键，底层不知道哪个字段是主键。
+     *
+     * @param entity
+     * @param id
+     */
     @Override
-    public ResponseResult create(@RequestBody @Validated({InsertGroup.class}) ${dtoClassName} param) throws BizException {
-        return super.create(param);
+    public void setEntityId(${modelClassName} entity, Object id) {
+        entity.set${keyFieldName}((Long)id);
     }
 
     /**
