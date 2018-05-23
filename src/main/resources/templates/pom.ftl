@@ -61,7 +61,7 @@
         <dependency>
             <groupId>cn.waterlu</groupId>
             <artifactId>waterloo-starter-web</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
 
     </dependencies>
