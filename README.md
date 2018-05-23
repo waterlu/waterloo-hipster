@@ -1,0 +1,2 @@
+# waterloo-hipster
+像Jhipster一样可以自动生成java后端项目和代码的自动化工具，适合创建spring boot和spring cloud微服务项目。
