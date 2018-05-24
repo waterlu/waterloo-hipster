@@ -1,4 +1,4 @@
-package cn.lu.hipster.service.impl;
+package cn.lu.hipster.api;
 
 import cn.lu.hipster.core.*;
 import cn.lu.hipster.model.GeneratorParam;

@@ -1,6 +1,9 @@
 package cn.lu.hipster.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * 程序包信息
@@ -8,17 +11,21 @@ import lombok.Data;
  * @author lutiehua
  * @date 2017/09/25
  */
-@Data
+@Getter
+@Setter
+@ToString
 public class PackageInfo {
 
     /**
      * 项目路径
      */
+    @NotBlank
     private String projectPath;
 
     /**
      * 基础包名
      */
+    @NotBlank
     private String basePackage;
 
     /**
@@ -64,6 +71,7 @@ public class PackageInfo {
     /**
      * 作者
      */
+    @NotBlank
     private String author;
 
     /**

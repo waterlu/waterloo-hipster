@@ -71,7 +71,7 @@ public class GeneratedJavaQueryClass extends AbstractGeneratedJavaDatabaseClass 
                 }
 
                 // API文档的注解
-//                javaField.getAnnotations().add(getApiDocumentAnnotation(field));
+                javaField.getAnnotations().add(getApiDocumentAnnotation(field));
 
                 javaFieldList.add(javaField);
             }

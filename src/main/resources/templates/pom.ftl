@@ -44,13 +44,6 @@
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
-        <!-- test -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!-- 监控 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -61,7 +54,21 @@
         <dependency>
             <groupId>cn.waterlu</groupId>
             <artifactId>waterloo-starter-web</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
+        </dependency>
+
+        <!-- common-web -->
+        <dependency>
+            <groupId>cn.waterlu</groupId>
+            <artifactId>waterloo-hipster</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

@@ -3,6 +3,8 @@ package cn.lu.hipster.model;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * 项目信息
  *
@@ -21,6 +23,7 @@ public class ProjectInfo {
     /**
      * 服务端口
      */
+    @NotNull
     private Integer port;
 
     private String version;

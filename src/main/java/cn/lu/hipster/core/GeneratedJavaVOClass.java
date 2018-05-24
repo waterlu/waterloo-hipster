@@ -39,7 +39,7 @@ public class GeneratedJavaVOClass extends AbstractGeneratedJavaDatabaseClass {
                 javaField.setRemark(field.getRemarks());
 
                 // API文档的注解
-//                javaField.getAnnotations().add(getApiDocumentAnnotation(field));
+                javaField.getAnnotations().add(getApiDocumentAnnotation(field));
 
                 javaFieldList.add(javaField);
             }

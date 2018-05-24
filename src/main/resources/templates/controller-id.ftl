@@ -6,11 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.ApiOperation;
 import cn.lu.web.mvc.BizException;
 import cn.lu.web.mvc.DBException;
 import cn.lu.web.mvc.ResponseData;
 import cn.lu.web.mvc.ResponseResult;
+import cn.lu.web.mvc.SimpleResponseData;
 import cn.lu.web.vo.InsertGroup;
+import cn.lu.web.vo.UpdateGroup;
 import cn.lu.web.base.BaseController;
 import cn.lu.web.base.BaseService;
 
@@ -50,6 +53,30 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
     @Override
     public void setEntityId(${modelClassName} entity, Object id) {
         entity.set${keyFieldName}((Long)id);
+    }
+
+    @Override
+    @ApiOperation(value = "创建${classRemark}", response = ${voClassName}.class, notes = "创建${classRemark}接口描述")
+    public ResponseResult create(@RequestBody @Validated({InsertGroup.class}) ${dtoClassName} param) throws BizException {
+        return super.create(param);
+    }
+
+    @Override
+    @ApiOperation(value = "获取${classRemark}详情接口", response = ${voClassName}.class, notes = "获取${classRemark}详情接口描述")
+    public ResponseResult get(@PathVariable Long id) throws BizException {
+        return super.get(id);
+    }
+
+    @Override
+    @ApiOperation(value = "更新${classRemark}接口", response = String.class, notes = "更新${classRemark}接口描述")
+    public ResponseResult update(@PathVariable Long id, @RequestBody @Validated({UpdateGroup.class}) ${dtoClassName} param) throws BizException {
+        return super.update(id, param);
+    }
+
+    @Override
+    @ApiOperation(value = "删除${classRemark}接口", response = String.class, notes = "删除${classRemark}接口描述")
+    public ResponseResult delete(@PathVariable Long id) throws BizException {
+        return super.delete(id);
     }
 
     /**

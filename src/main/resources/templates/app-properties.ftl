@@ -20,6 +20,12 @@ pagehelper.offset-as-page-num=false
 pagehelper.supportMethodsArguments=true
 pagehelper.params=count=countSql
 
+# Mapper接口基类
+mapper.base.class=cn.lu.web.mapper.CrudMapper
+
+# 实体类基类
+entity.base.class=cn.lu.web.base.BaseEntity
+
 # 关闭自动热部署
 spring.devtools.restart.enabled=false
 

@@ -67,6 +67,17 @@ public abstract class AbstractGeneratedFile {
      * @throws Exception
      */
     public boolean generateFile() throws Exception {
+        return generateFile(true);
+    }
+
+    /**
+     * 生成文件
+     *
+     * @param parse 是否解析
+     * @return
+     * @throws Exception
+     */
+    public boolean generateFile(boolean parse) throws Exception {
 
         beforeGenerateFile();
 
@@ -95,7 +106,11 @@ public abstract class AbstractGeneratedFile {
 
         // 根据模板生成文件
         Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "UTF-8"));
-        template.process(this.getDataModel(), writer);
+        if(parse) {
+            template.process(this.getDataModel(), writer);
+        } else {
+            template.dump(writer);
+        }
         writer.flush();
         writer.close();
         return true;

@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import cn.lu.hipster.api.Swagger2Markdown;
 
 import java.io.BufferedWriter;
 import java.nio.file.Files;
@@ -33,5 +34,26 @@ public class ${className} {
     @Test
     public void contextLoads() {
 
+    }
+
+    @Test
+    public void generateDocTest() throws Exception {
+        String outputDir = "doc/";
+        MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.get("/v2/api-docs")
+            .accept(MediaType.APPLICATION_JSON))
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andReturn();
+
+        MockHttpServletResponse response = mvcResult.getResponse();
+        response.setCharacterEncoding("UTF-8");
+        String swaggerJson = response.getContentAsString();
+        Files.createDirectories(Paths.get(outputDir));
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputDir, "swagger.json"))) {
+            writer.write(swaggerJson);
+        }
+        Swagger2Markdown swagger2Markdown = new Swagger2Markdown();
+        String sourcePath = Paths.get(outputDir, "swagger.json").toString();
+        String outputPath = Paths.get(outputDir).toString();
+        swagger2Markdown.convert(sourcePath, outputPath);
     }
 }
