@@ -61,7 +61,7 @@
         <dependency>
             <groupId>cn.waterlu</groupId>
             <artifactId>waterloo-hipster</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
 
         <!-- test -->

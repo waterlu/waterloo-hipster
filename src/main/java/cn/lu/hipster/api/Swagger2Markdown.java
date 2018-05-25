@@ -1,9 +1,6 @@
 package cn.lu.hipster.api;
 
-import cn.lu.hipster.model.DocInterfaceModel;
-import cn.lu.hipster.model.DocParamModel;
-import cn.lu.hipster.model.DocRequestModel;
-import cn.lu.hipster.model.DocResponseModel;
+import cn.lu.hipster.model.*;
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
@@ -21,6 +18,7 @@ import io.swagger.models.properties.StringProperty;
 import io.swagger.parser.SwaggerParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.*;
@@ -31,6 +29,7 @@ import java.util.*;
  * @author lutiehua
  * @date 2018/5/24
  */
+@Component
 public class Swagger2Markdown {
 
     private final Logger logger = LoggerFactory.getLogger(Swagger2Markdown.class);

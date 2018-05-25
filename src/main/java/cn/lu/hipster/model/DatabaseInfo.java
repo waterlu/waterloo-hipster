@@ -1,5 +1,6 @@
 package cn.lu.hipster.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotBlank;
 

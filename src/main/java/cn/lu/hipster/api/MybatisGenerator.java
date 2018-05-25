@@ -1,6 +1,9 @@
-package cn.lu.hipster.core;
+package cn.lu.hipster.api;
 
 import cn.lu.hipster.consts.DBDataType;
+import cn.lu.hipster.core.Generator;
+import cn.lu.hipster.core.MybatisProgressCallback;
+import cn.lu.hipster.core.MybatisShellCallback;
 import cn.lu.hipster.model.*;
 import cn.lu.hipster.tool.DatabaseTool;
 import com.google.common.base.CaseFormat;
@@ -27,10 +30,10 @@ import java.util.List;
 public class MybatisGenerator implements Generator {
 
     @Value("${mapper.base.class}")
-    private String mapperBaseClass;
+    private String mapperBaseClass = "cn.lu.web.mapper.CrudMapper";
 
     @Value("${entity.base.class}")
-    private String entityBaseClass;
+    private String entityBaseClass = "cn.lu.web.base.BaseEntity";
 
     @Autowired
     private MybatisShellCallback shellCallback;

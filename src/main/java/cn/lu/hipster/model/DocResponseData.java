@@ -1,4 +1,4 @@
-package cn.lu.hipster.api;
+package cn.lu.hipster.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

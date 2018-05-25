@@ -5,7 +5,7 @@
 
 	<groupId>cn.waterlu</groupId>
 	<artifactId>waterloo-hipster</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>waterloo-hipster</name>
@@ -21,6 +21,7 @@
 		<guava.version>22.0</guava.version>
 		<tk.mapper.version>1.1.5</tk.mapper.version>
 		<mybatis.generator.version>1.3.5</mybatis.generator.version>
+		<mysql.version>5.1.40</mysql.version>
 		<swagger.version>2.7.0</swagger.version>
 		<swagger.parser.version>1.0.32</swagger.parser.version>
 	</properties>
@@ -48,7 +49,7 @@
 			<version>${fastjson.version}</version>
 		</dependency>
 
-		<!-- Mapper -->
+		<!-- Mybatis -->
 		<dependency>
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper-spring-boot-starter</artifactId>
@@ -68,17 +69,32 @@
 			<version>${swagger.version}</version>
 		</dependency>
 
-		<!-- swagger-compat-spec-parser -->
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-compat-spec-parser</artifactId>
 			<version>${swagger.parser.version}</version>
 		</dependency>
 
+		<!-- Freemarker -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 			<version>${spring-boot.version}</version>
+		</dependency>
+
+		<!-- test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>${spring-boot.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -99,6 +115,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

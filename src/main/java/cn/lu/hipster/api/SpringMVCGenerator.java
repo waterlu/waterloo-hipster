@@ -6,6 +6,8 @@ import cn.lu.hipster.model.TableInfo;
 import org.springframework.stereotype.Component;
 
 /**
+ * MVC代码生成器
+ *
  * @author lutiehua
  * @date 2017/11/14
  */

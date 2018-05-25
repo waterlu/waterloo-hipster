@@ -1,6 +1,10 @@
 package cn.lu.hipster.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+
+import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -18,6 +22,7 @@ public class GeneratorParam {
      * 工程相关信息
      */
     @Valid
+    @JSONField(serialize = false)
     private ProjectInfo projectInfo;
 
     /**
@@ -36,6 +41,7 @@ public class GeneratorParam {
      * 项目依赖信息
      */
     @Valid
+    @JSONField(serialize = false)
     private List<DependencyInfo> dependencies;
 
     /**

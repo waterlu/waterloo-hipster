@@ -36,7 +36,23 @@ public class ${className} {
 
     }
 
-    @Test
+    //@Test
+    public void generateSourceCode() throws Exception {
+        // 读取配置参数
+        Resource configFile = new ClassPathResource("hipster-config.json");
+        GeneratorParam generatorParam = JSON.parseObject(configFile.getInputStream(), GeneratorParam.class);
+
+        MybatisGenerator mybatisGenerator = new MybatisGenerator();
+        SpringMVCGenerator springMVCGenerator = new SpringMVCGenerator();
+
+        // 生成CRUD
+        mybatisGenerator.generateCode(generatorParam);
+
+        // 生成Controller/Service/Model
+        springMVCGenerator.generateCode(generatorParam);
+    }
+
+    //@Test
     public void generateDocTest() throws Exception {
         String outputDir = "doc/";
         MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.get("/v2/api-docs")
