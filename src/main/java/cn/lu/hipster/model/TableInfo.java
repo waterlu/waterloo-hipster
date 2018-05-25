@@ -1,5 +1,6 @@
 package cn.lu.hipster.model;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -53,11 +54,13 @@ public class TableInfo {
     /**
      * 连接表
      */
+    @JSONField(serialize = false)
     private String main;
 
     /**
      * 连接字段
      */
+    @JSONField(serialize = false)
     private String join;
 
     /**

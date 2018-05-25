@@ -1,9 +1,15 @@
 package ${packageName};
 
+import cn.lu.hipster.api.MybatisGenerator;
+import cn.lu.hipster.api.SpringMVCGenerator;
+import cn.lu.hipster.model.GeneratorParam;
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
