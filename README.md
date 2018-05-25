@@ -138,36 +138,19 @@ public class XxxApplicationTests {
 
 ### TODO内容
 
-(1) 通过Swagger注解自动生成接口文档；
+(1) 通用的批量写入接口；
 
-(2) 通用的批量写入接口；
+(2) 通用的列表查询接口；
 
-(3) 通用的列表查询接口；
+(3) 创建Spring Cloud项目；
 
-(4) 创建Spring Cloud项目；
+(4) 自动生成错误码文档。
 
 ### 定制化
 
-(1) 请根据实际情况修改配置类的模板文件
+请根据实际情况修改配置类的模板文件
 
 - /resources/templates/app-dev-properties.ftl 修改开发环境默认的数据库配置
 - /resources/templates/app-test-properties.ftl 修改测试环境默认的数据库配置
 - /resources/templates/pom.ftl 添加其他默认依赖的项目
 - /resources/templates/log4j2.ftl 修改日志文件默认目录
-
-(2) 请根据实际情况修改/resources/static/js/controllers/project.js文件更改页面默认配置
-
-- $scope.groupId - 默认组织名称
-- $scope.artifactId - 默认项目名称
-- $scope.springBootVersion - SpringBoot版本（默认1.5.13.RELEASE）
-- $scope.author - 默认作者
-- $scope.basePackage - 默认基础包目录
-- $scope.projectDir - 默认生成项目所在目录
-- $scope.dbIP - 默认连接数据库地址（读取库表结构用）
-- $scope.dbUsername - 默认连接数据库用户名
-- $scope.dbPassword - 默认连接数据库密码
-- $scope.controllerPackage - Controller类所在包名称（默认web）
-- $scope.daoPackage - Mapper类所在包名称（默认mapper）
-- $scope.entityPackage - 实体类所在包名称（默认entity）
-- $scope.dtoPackage - DTO类所在包名称（默认vo）
-- $scope.voPackage - VO类所在包名称（默认vo）
