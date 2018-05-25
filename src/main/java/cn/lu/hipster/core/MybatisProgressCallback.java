@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
  * @author lutiehua
  * @date 2017/11/09
  */
-@Component
 public class MybatisProgressCallback implements ProgressCallback {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

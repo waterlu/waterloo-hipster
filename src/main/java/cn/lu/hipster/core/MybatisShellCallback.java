@@ -15,7 +15,6 @@ import static org.mybatis.generator.internal.util.messages.Messages.getString;
  * @author lutiehua
  * @date 2017/11/09
  */
-@Component
 public class MybatisShellCallback implements ShellCallback {
 
     public MybatisShellCallback() {

@@ -35,11 +35,9 @@ public class MybatisGenerator implements Generator {
     @Value("${entity.base.class}")
     private String entityBaseClass = "cn.lu.web.base.BaseEntity";
 
-    @Autowired
-    private MybatisShellCallback shellCallback;
+    private MybatisShellCallback shellCallback = new MybatisShellCallback();
 
-    @Autowired
-    private MybatisProgressCallback progressCallback;
+    private MybatisProgressCallback progressCallback = new MybatisProgressCallback();
 
     /**
      * 自动生成代码
