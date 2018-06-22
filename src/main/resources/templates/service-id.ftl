@@ -10,6 +10,6 @@ import ${import.name};
  * @author ${author}
  * @date ${date}
  */
-public interface ${className} {
+public interface ${className} extends BaseService<${modelClassName}, ${paramClassName}> {
 
 }

@@ -29,7 +29,7 @@ import ${import.name};
  */
 @RestController
 @RequestMapping(value = "/${classMapping}")
-public class ${className} extends BaseController<${modelClassName}, ${dtoClassName}> {
+public class ${className} extends BaseController<${modelClassName}, ${dtoClassName}, ${paramClassName}> {
 
     @Autowired
     private ${serviceClassName} ${serviceObjectName};
@@ -40,8 +40,8 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      * @return
      */
     @Override
-    public BaseService<${modelClassName}> getService() {
-        return (${serviceClassName}Impl) ${serviceObjectName};
+    public BaseService<${modelClassName}, ${paramClassName}> getService() {
+        return ${serviceObjectName};
     }
 
     /**

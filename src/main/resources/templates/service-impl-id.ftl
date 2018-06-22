@@ -16,7 +16,7 @@ import ${import.name};
  * @date ${date}
  */
 @Service
-public class ${className} extends BaseService<${modelClassName}> implements ${serviceClassName} {
+public class ${className} extends BaseServiceImpl<${modelClassName}, ${paramClassName}> implements ${serviceClassName} {
 
     @Autowired
     private ${mapperClassName} ${mapperObjectName};
