@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import cn.lu.web.mvc.BizException;
 import cn.lu.web.mvc.DBException;
 import cn.lu.web.mvc.ResponseData;
@@ -14,6 +17,7 @@ import cn.lu.web.mvc.ResponseResult;
 import cn.lu.web.mvc.SimpleResponseData;
 import cn.lu.web.vo.InsertGroup;
 import cn.lu.web.vo.UpdateGroup;
+import cn.lu.web.vo.QueryParam;
 import cn.lu.web.base.BaseController;
 import cn.lu.web.base.BaseService;
 
@@ -29,6 +33,7 @@ import ${import.name};
  */
 @RestController
 @RequestMapping(value = "/${classMapping}")
+@Api(value = "/${classMapping}", description= "${classRemark}接口")
 public class ${className} extends BaseController<${modelClassName}, ${dtoClassName}, ${paramClassName}> {
 
     @Autowired
@@ -56,31 +61,50 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
         entity.set${keyFieldName}(rowId);
     }
 
-    @Override
+    @PostMapping(value = "")
     @ApiOperation(value = "创建${classRemark}", response = ${voClassName}.class, notes = "创建${classRemark}接口描述")
     public ResponseResult create(@RequestBody @Validated({InsertGroup.class}) ${dtoClassName} param) throws BizException {
-        return super.create(param);
+        return super.createResource(param);
     }
 
-    @Override
+    @GetMapping(value = "/{id}")
     @ApiOperation(value = "获取${classRemark}详情接口", response = ${voClassName}.class, notes = "获取${classRemark}详情接口描述")
-    public ResponseResult get(@PathVariable Object id) throws BizException {
-        Long rowId = Long.parseLong(id.toString());
-        return super.get(rowId);
+    public ResponseResult get(@PathVariable Long id) throws BizException {
+        return super.getResource(id);
     }
 
-    @Override
+    @PutMapping(value = "/{id}")
     @ApiOperation(value = "更新${classRemark}接口", response = String.class, notes = "更新${classRemark}接口描述")
-    public ResponseResult update(@PathVariable Object id, @RequestBody @Validated({UpdateGroup.class}) ${dtoClassName} param) throws BizException {
-        Long rowId = Long.parseLong(id.toString());
-        return super.update(rowId, param);
+    public ResponseResult update(@PathVariable Long id, @RequestBody @Validated({UpdateGroup.class}) ${dtoClassName} param) throws BizException {
+        return super.updateResource(id, param);
     }
 
-    @Override
+    @DeleteMapping(value = "/{id}")
     @ApiOperation(value = "删除${classRemark}接口", response = String.class, notes = "删除${classRemark}接口描述")
-    public ResponseResult delete(@PathVariable Object id) throws BizException {
-        Long rowId = Long.parseLong(id.toString());
-        return super.delete(rowId);
+    public ResponseResult delete(@PathVariable Long id) throws BizException {
+        return super.deleteResource(id);
+    }
+
+    @RequestMapping(value = "/query", method = {RequestMethod.GET, RequestMethod.POST})
+    @ApiOperation(value = "查询${classRemark}接口", response = ${voClassName}.class, responseContainer = "List", notes = "查询${classRemark}接口描述")
+    public ResponseResult query(@RequestBody @Validated ${paramClassName} param) throws BizException {
+        return super.queryResource(param);
+    }
+
+    @GetMapping(value = "/queryAll")
+    @ApiOperation(value = "查询所有${classRemark}接口", response = ${voClassName}.class, responseContainer = "List", notes = "查询所有${classRemark}接口描述")
+    @ApiImplicitParams({@ApiImplicitParam(name = "startRow", value = "分页开始下标,默认0", dataType = "Integer", required = false),
+                        @ApiImplicitParam(name = "pageSize", value = "每页数量,默认为20", dataType = "Integer", required = false)})
+    public ResponseResult queryAll(@RequestParam(required = false) Integer startRow,
+                                   @RequestParam(required = false) Integer pageSize) throws BizException {
+        QueryParam param = new QueryParam();
+        if (null != startRow) {
+            param.setStartRow(startRow);
+        }
+        if (null != pageSize) {
+            param.setPageSize(pageSize);
+        }
+        return super.queryAllResource(param);
     }
 
     /**

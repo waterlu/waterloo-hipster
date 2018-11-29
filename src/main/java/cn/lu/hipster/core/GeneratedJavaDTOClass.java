@@ -30,6 +30,14 @@ public class GeneratedJavaDTOClass extends AbstractGeneratedJavaDatabaseClass {
         ignoreFieldMap.put("delete_flag", "delete_flag");
         ignoreFieldMap.put("create_time", "create_time");
         ignoreFieldMap.put("update_time", "update_time");
+        ignoreFieldMap.put("trace_id", "trace_id");
+        ignoreFieldMap.put("callSystem_id", "callSystem_id");
+        ignoreFieldMap.put("data_id", "data_id");
+        ignoreFieldMap.put("data_type", "data_type");
+        ignoreFieldMap.put("data_owner", "data_owner");
+        ignoreFieldMap.put("auth_code", "auth_code");
+        ignoreFieldMap.put("auth_owner", "auth_owner");
+        ignoreFieldMap.put("auth_target", "auth_target");
 
         try {
             List<DBField> fieldList = getTableColumns();
@@ -39,8 +47,8 @@ public class GeneratedJavaDTOClass extends AbstractGeneratedJavaDatabaseClass {
                     continue;
                 }
 
-                // 主键字段自动赋值，不用添加到DTO中
-                if (field.isPrimaryKey()) {
+                // 自增主键字段自动赋值，不用添加到DTO中
+                if (field.isPrimaryKey() && field.isAutoIncrement()) {
                     continue;
                 }
 

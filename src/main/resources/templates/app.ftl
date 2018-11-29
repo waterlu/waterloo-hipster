@@ -42,8 +42,8 @@ public class ${className} {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("${classRemark}" + " Api Documentation")
-            .description("${classRemark}" + " Api Documentation")
+            .title("${classRemark} 接口文档")
+            .description("${classRemark} 接口文档")
             .contact(new Contact("${author}", "", ""))
             .version("1.0.0")
             .build();
