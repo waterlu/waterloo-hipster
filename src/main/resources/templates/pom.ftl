@@ -50,19 +50,15 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- common-web -->
+        <#list dependencies as dependency>
+        <!-- ${dependency.name} -->
         <dependency>
-            <groupId>cn.waterlu</groupId>
-            <artifactId>waterloo-starter-web</artifactId>
-            <version>1.0.1</version>
+            <groupId>${dependency.groupId}</groupId>
+            <artifactId>${dependency.artifactId}</artifactId>
+            <version>${dependency.version}</version>
         </dependency>
 
-        <!-- common-web -->
-        <dependency>
-            <groupId>cn.waterlu</groupId>
-            <artifactId>waterloo-hipster</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+        </#list>
 
         <!-- test -->
         <dependency>

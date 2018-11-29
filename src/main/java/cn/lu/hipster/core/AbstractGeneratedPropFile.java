@@ -23,7 +23,15 @@ public abstract class AbstractGeneratedPropFile extends AbstractGeneratedFile {
         int port = generatorParam.getProjectInfo().getPort();
         int managePort = port + 10000;
 
-        model.setDbName(generatorParam.getDatabaseInfo().getDbName());
+        String serverAddress = generatorParam.getDatabaseInfo().getDbIP();
+        Integer serverPort = generatorParam.getDatabaseInfo().getDbPort();
+        String dbName = generatorParam.getDatabaseInfo().getDbName();
+
+        String url = String.format("%s:%d/%s", serverAddress, serverPort, dbName);
+
+        model.setDatasourceUrl(url);
+        model.setDatasourceUsername(generatorParam.getDatabaseInfo().getDbUsername());
+        model.setDatasourcePassword(generatorParam.getDatabaseInfo().getDbPassword());
         model.setManagePort(managePort);
         model.setServiceName(generatorParam.getProjectInfo().getName());
         model.setServicePort(port);

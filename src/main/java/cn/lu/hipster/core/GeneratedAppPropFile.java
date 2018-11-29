@@ -11,7 +11,7 @@ import cn.lu.hipster.model.PropModel;
  * @author lutiehua
  * @date 2017/11/10
  */
-public class GeneratedAppPropFile extends AbstractGeneratedFile {
+public class GeneratedAppPropFile extends AbstractGeneratedPropFile {
 
     private PropModel model;
 
@@ -28,7 +28,6 @@ public class GeneratedAppPropFile extends AbstractGeneratedFile {
         String basePackageName = generatorParam.getPackageInfo().getBasePackage();
         String packageName = basePackageName + "." + generatorParam.getPackageInfo().getEntityPackage();
 
-        model.setDbName(generatorParam.getDatabaseInfo().getDbName());
         model.setManagePort(managePort);
         model.setServiceName(generatorParam.getProjectInfo().getName());
         model.setServicePort(port);

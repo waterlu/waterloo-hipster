@@ -32,9 +32,19 @@ public class PropModel extends DataModel {
     private int managePort;
 
     /**
-     * 数据库名 spring.datasource.url
+     * spring.datasource.url
      */
-    private String dbName;
+    private String datasourceUrl;
+
+    /**
+     * spring.datasource.username
+     */
+    private String datasourceUsername;
+
+    /**
+     * spring.datasource.password
+     */
+    private String datasourcePassword;
 
     /**
      * 实体类包名 mybatis.type-aliases-package

@@ -105,6 +105,10 @@ public class XxxApplicationTests {
 
 ## 版本变更日志
 
+### v1.0.3
+
+- 优化ID和UUID支持
+
 ### V1.0.2
 
 - 重新生成代码

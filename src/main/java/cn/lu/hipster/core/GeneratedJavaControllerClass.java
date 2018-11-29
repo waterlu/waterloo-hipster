@@ -1,5 +1,6 @@
 package cn.lu.hipster.core;
 
+import cn.lu.hipster.consts.KeyType;
 import cn.lu.hipster.model.GeneratorParam;
 import cn.lu.hipster.model.TableInfo;
 import com.google.common.base.CaseFormat;
@@ -59,6 +60,13 @@ public class GeneratedJavaControllerClass extends AbstractGeneratedJavaTemplateC
      */
     @Override
     public String getTemplateName() {
-        return "controller-id.ftl";
+        if (tableInfo.getKeyType().equalsIgnoreCase(KeyType.KEY_TYPE_ID)) {
+            return "controller-id.ftl";
+        } else if (tableInfo.getKeyType().equalsIgnoreCase(KeyType.KEY_TYPE_UUID)) {
+            return "controller-uuid.ftl";
+        } else {
+            // 默认
+            return "controller-id.ftl";
+        }
     }
 }

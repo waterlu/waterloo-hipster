@@ -52,8 +52,7 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      */
     @Override
     public void setEntityId(${modelClassName} entity, Object id) {
-        Long rowId = Long.parseLong(id.toString());
-        entity.set${keyFieldName}(rowId);
+        entity.set${keyFieldName}(id.toString());
     }
 
     @Override
@@ -65,22 +64,19 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
     @Override
     @ApiOperation(value = "获取${classRemark}详情接口", response = ${voClassName}.class, notes = "获取${classRemark}详情接口描述")
     public ResponseResult get(@PathVariable Object id) throws BizException {
-        Long rowId = Long.parseLong(id.toString());
-        return super.get(rowId);
+        return super.get(id);
     }
 
     @Override
     @ApiOperation(value = "更新${classRemark}接口", response = String.class, notes = "更新${classRemark}接口描述")
     public ResponseResult update(@PathVariable Object id, @RequestBody @Validated({UpdateGroup.class}) ${dtoClassName} param) throws BizException {
-        Long rowId = Long.parseLong(id.toString());
-        return super.update(rowId, param);
+        return super.update(id, param);
     }
 
     @Override
     @ApiOperation(value = "删除${classRemark}接口", response = String.class, notes = "删除${classRemark}接口描述")
     public ResponseResult delete(@PathVariable Object id) throws BizException {
-        Long rowId = Long.parseLong(id.toString());
-        return super.delete(rowId);
+        return super.delete(id);
     }
 
     /**
