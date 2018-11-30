@@ -279,7 +279,11 @@ public abstract class AbstractGeneratedJavaDatabaseClass extends AbstractGenerat
         // 字段注释里面如果有"，生成的@ApiModelProperty中需要替换为\"
         remark = remark.replaceAll("\"", "\\\\\"");
         annotation.addProp("value", remark);
-        annotation.addProp("required", false);
+        if (field.isNullable()) {
+            annotation.addProp("required", false);
+        } else {
+            annotation.addProp("required", true);
+        }
         return annotation;
     }
 

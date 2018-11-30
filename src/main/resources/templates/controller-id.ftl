@@ -97,14 +97,14 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
                         @ApiImplicitParam(name = "pageSize", value = "每页数量,默认为20", dataType = "Integer", required = false)})
     public ResponseResult queryAll(@RequestParam(required = false) Integer startRow,
                                    @RequestParam(required = false) Integer pageSize) throws BizException {
-        QueryParam param = new QueryParam();
+        ${paramClassName} param = new ${paramClassName}();
         if (null != startRow) {
             param.setStartRow(startRow);
         }
         if (null != pageSize) {
             param.setPageSize(pageSize);
         }
-        return super.queryAllResource(param);
+        return super.queryResource(param);
     }
 
     /**
