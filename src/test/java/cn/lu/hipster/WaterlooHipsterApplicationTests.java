@@ -42,7 +42,7 @@ public class WaterlooHipsterApplicationTests {
         projectInfo.setSpringBootVersion("1.5.13.RELEASE");
         projectInfo.setSpringCloudVersion("Dalston.SR4");
         projectInfo.setDescription("Demo project for Spring Boot");
-        projectInfo.setProjectType(ProjectType.PROJECT_TYPE_BOOT);
+        projectInfo.setProjectType(ProjectType. PROJECT_TYPE_BOOT);
         generatorParam.setProjectInfo(projectInfo);
 
         DatabaseInfo databaseInfo = new DatabaseInfo();
