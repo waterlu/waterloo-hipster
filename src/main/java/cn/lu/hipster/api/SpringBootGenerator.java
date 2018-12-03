@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @date 2018/5/25
  */
 @Component
-public class SpringProjectGenerator implements Generator {
+public class SpringBootGenerator implements Generator {
 
     /**
      * 自动生成工程文件

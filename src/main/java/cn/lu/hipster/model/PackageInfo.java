@@ -42,7 +42,7 @@ public class PackageInfo {
     /**
      * facade包名
      */
-    private String facadePackage = "api";
+    private String facadePackage;
 
     /**
      * service包名

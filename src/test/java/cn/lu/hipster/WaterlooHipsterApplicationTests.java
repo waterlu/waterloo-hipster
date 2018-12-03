@@ -2,13 +2,12 @@ package cn.lu.hipster;
 
 import cn.lu.hipster.api.MybatisGenerator;
 import cn.lu.hipster.api.SpringMVCGenerator;
-import cn.lu.hipster.api.SpringProjectGenerator;
+import cn.lu.hipster.api.SpringBootGenerator;
 import cn.lu.hipster.consts.KeyType;
 import cn.lu.hipster.consts.ProjectType;
 import cn.lu.hipster.model.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
@@ -99,7 +98,7 @@ public class WaterlooHipsterApplicationTests {
         tableList.add(tableUser);
         generatorParam.setTables(tableList);
 
-        SpringProjectGenerator projectGenerator = new SpringProjectGenerator();
+        SpringBootGenerator projectGenerator = new SpringBootGenerator();
         MybatisGenerator mybatisGenerator = new MybatisGenerator();
         SpringMVCGenerator springMVCGenerator = new SpringMVCGenerator();
 

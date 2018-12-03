@@ -32,13 +32,13 @@ public class SpringMVCGenerator implements Generator {
 //        generateConfig(generatorParam);
     }
 
-    private void generateController(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {
+    protected void generateController(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {
         // Controller
         GeneratedJavaControllerClass javaControllerClass = new GeneratedJavaControllerClass(generatorParam, tableInfo);
         javaControllerClass.generateFile();
     }
 
-    private void generateService(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {
+    protected void generateService(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {
         // Service
         GeneratedJavaServiceClass javaServiceClass = new GeneratedJavaServiceClass(generatorParam, tableInfo);
         javaServiceClass.generateFile();
@@ -48,7 +48,7 @@ public class SpringMVCGenerator implements Generator {
         javaServiceImplClass.generateFile();
     }
 
-    private void generateModel(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {
+    protected void generateModel(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {
         // DTO
         GeneratedJavaDTOClass javaDTOClass = new GeneratedJavaDTOClass(generatorParam, tableInfo);
         javaDTOClass.generateFile();
