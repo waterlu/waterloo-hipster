@@ -23,7 +23,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @date ${date}
  */
 @EnableFeignClients(basePackages = "${basePackage}")
-//@EnableHystrix
+@EnableHystrix
 @SpringCloudApplication
 @MapperScan("${mapperPackage}")
 @EnableWaterlooWeb

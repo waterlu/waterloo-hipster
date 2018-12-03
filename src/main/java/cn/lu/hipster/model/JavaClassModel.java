@@ -35,6 +35,11 @@ public class JavaClassModel extends DataModel {
     protected String fallbackClassName;
 
     /**
+     * FeignConfig类名（Fegin）
+     */
+    protected String feignConfigClassName;
+
+    /**
      * 类注释
      */
     protected String classRemark;

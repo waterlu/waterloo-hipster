@@ -40,7 +40,7 @@ public interface ${className} {
      * @throws BizException
      */
     @GetMapping(value = "/${classMapping}/{id}")
-    ResponseResult<${voClassName}> get(@PathVariable(value = "id") Long id) throws BizException;
+    ResponseResult<${voClassName}> get(@PathVariable(value = "id") String id) throws BizException;
 
     /**
      * 更新
@@ -51,7 +51,7 @@ public interface ${className} {
      * @throws BizException
      */
     @PutMapping(value = "/${classMapping}/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    ResponseResult<String> update(@PathVariable(value = "id") Long id, @RequestBody ${dtoClassName} param) throws BizException;
+    ResponseResult<String> update(@PathVariable(value = "id") String id, @RequestBody ${dtoClassName} param) throws BizException;
 
     /**
      * 逻辑删除
@@ -61,7 +61,7 @@ public interface ${className} {
      * @throws BizException
      */
     @DeleteMapping(value = "/${classMapping}/{id}")
-    ResponseResult<String> delete(@PathVariable(value = "id") Long id) throws BizException;
+    ResponseResult<String> delete(@PathVariable(value = "id") String id) throws BizException;
 
     /**
      * 查询

@@ -29,7 +29,7 @@ public class SpringCloudGenerator implements Generator {
         generatedFileList.add(new GeneratedJavaCloudAppClass(generatorParam));
 
         // ApplicationTest
-        generatedFileList.add(new GeneratedJavaAppTestClass(generatorParam));
+        generatedFileList.add(new GeneratedJavaCloudAppTestClass(generatorParam));
 
         // application.properties
         generatedFileList.add(new GeneratedCloudAppPropFile(generatorParam));
@@ -37,7 +37,7 @@ public class SpringCloudGenerator implements Generator {
         // application-dev.properties
         generatedFileList.add(new GeneratedCloudAppDevPropFile(generatorParam));
 
-        // application-test1.properties
+        // application-test.properties
         generatedFileList.add(new GeneratedCloudAppTestPropFile(generatorParam));
 
         // boot.properties
@@ -45,6 +45,14 @@ public class SpringCloudGenerator implements Generator {
 
         // log4j2
         generatedFileList.add(new GeneratedLog4j2File(generatorParam));
+
+        // Doc Template
+        GeneratedDocTemplateFile docTemplateFile = new GeneratedDocTemplateFile(generatorParam);
+        docTemplateFile.generateFile();
+
+        // JSON配置文件
+        GeneratedHipsterConfigFile hipsterConfigFile = new GeneratedHipsterConfigFile();
+        hipsterConfigFile.generateCode(generatorParam);
 
         // FeignConfig
         generatedFileList.add(new GeneratedJavaFeignConfigClass(generatorParam, null));

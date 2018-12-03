@@ -31,7 +31,7 @@ public class GeneratedJavaControllerImplClass extends AbstractGeneratedJavaTempl
         String basePackage = packageInfo.getBasePackage();
 
         // Facade类
-        String facadeClassName = String.format("%s.%s.%sClient", basePackage, packageInfo.getControllerPackage(), modelName);
+        String facadeClassName = String.format("%s.%s.%sClient", basePackage, packageInfo.getFacadePackage(), modelName);
         facadeClassName = super.parseJavaImportType(facadeClassName);
         model.setFacadeClassName(facadeClassName);
 

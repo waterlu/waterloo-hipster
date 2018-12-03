@@ -5,7 +5,7 @@
 
 	<groupId>cn.waterlu</groupId>
 	<artifactId>waterloo-hipster</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 	<packaging>jar</packaging>
 
 	<name>waterloo-hipster</name>
@@ -95,6 +95,12 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.waterlu</groupId>
+			<artifactId>waterloo-starter-web</artifactId>
+			<version>1.0.1</version>
 		</dependency>
 
 	</dependencies>

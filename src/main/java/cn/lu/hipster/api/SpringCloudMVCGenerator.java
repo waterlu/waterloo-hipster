@@ -29,19 +29,4 @@ public class SpringCloudMVCGenerator extends SpringMVCGenerator {
         GeneratedJavaControllerFacadeFallbackClass facadeFallbackClass = new GeneratedJavaControllerFacadeFallbackClass(generatorParam, tableInfo);
         facadeFallbackClass.generateFile();
     }
-
-    @Override
-    protected void generateModel(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {
-        // DTO
-        GeneratedJavaCloudDTOClass javaDTOClass = new GeneratedJavaCloudDTOClass(generatorParam, tableInfo);
-        javaDTOClass.generateFile();
-
-        // QueryParamDTO
-        GeneratedJavaCloudQueryClass javaQueryParamClass = new GeneratedJavaCloudQueryClass(generatorParam, tableInfo);
-        javaQueryParamClass.generateFile();
-
-        // VO
-        GeneratedJavaCloudVOClass javaVOClass = new GeneratedJavaCloudVOClass(generatorParam, tableInfo);
-        javaVOClass.generateFile();
-    }
 }

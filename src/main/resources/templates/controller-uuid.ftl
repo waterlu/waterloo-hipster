@@ -60,36 +60,80 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
         entity.set${keyFieldName}(id.toString());
     }
 
+    /**
+     * 创建
+     *
+     * @param param
+     * @return
+     * @throws BizException
+     */
     @PostMapping(value = "")
     @ApiOperation(value = "创建${classRemark}", response = ${voClassName}.class, notes = "创建${classRemark}接口描述")
     public ResponseResult create(@RequestBody @Validated({InsertGroup.class}) ${dtoClassName} param) throws BizException {
         return super.createResource(param);
     }
 
+    /**
+     * 详情
+     *
+     * @param id
+     * @return
+     * @throws BizException
+     */
     @GetMapping(value = "/{id}")
     @ApiOperation(value = "获取${classRemark}详情接口", response = ${voClassName}.class, notes = "获取${classRemark}详情接口描述")
     public ResponseResult get(@PathVariable String id) throws BizException {
         return super.getResource(id);
     }
 
+    /**
+     * 更新
+     *
+     * @param id
+     * @param param
+     * @return
+     * @throws BizException
+     */
     @PutMapping(value = "/{id}")
     @ApiOperation(value = "更新${classRemark}接口", response = String.class, notes = "更新${classRemark}接口描述")
     public ResponseResult update(@PathVariable String id, @RequestBody @Validated({UpdateGroup.class}) ${dtoClassName} param) throws BizException {
         return super.updateResource(id, param);
     }
 
+    /**
+     * 逻辑删除
+     *
+     * @param id
+     * @return
+     * @throws BizException
+     */
     @DeleteMapping(value = "/{id}")
     @ApiOperation(value = "删除${classRemark}接口", response = String.class, notes = "删除${classRemark}接口描述")
     public ResponseResult delete(@PathVariable String id) throws BizException {
         return super.deleteResource(id);
     }
 
+    /**
+     * 查询
+     *
+     * @param param 对应${paramClassName}类
+     * @return
+     * @throws BizException
+     */
     @RequestMapping(value = "/query", method = {RequestMethod.GET, RequestMethod.POST})
     @ApiOperation(value = "查询${classRemark}接口", response = ${voClassName}.class, responseContainer = "List", notes = "查询${classRemark}接口描述")
     public ResponseResult query(@RequestBody @Validated ${paramClassName} param) throws BizException {
         return super.queryResource(param);
     }
 
+    /**
+     * 查询所有
+     *
+     * @param startRow
+     * @param pageSize
+     * @return
+     * @throws BizException
+     */
     @GetMapping(value = "/queryAll")
     @ApiOperation(value = "查询所有${classRemark}接口", response = ${voClassName}.class, responseContainer = "List", notes = "查询所有${classRemark}接口描述")
     @ApiImplicitParams({@ApiImplicitParam(name = "startRow", value = "分页开始下标,默认0", dataType = "Integer", required = false),

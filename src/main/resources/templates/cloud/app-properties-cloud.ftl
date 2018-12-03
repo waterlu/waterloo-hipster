@@ -27,7 +27,7 @@ mapper.base.class=cn.lu.web.mapper.CrudMapper
 entity.base.class=cn.lu.web.base.BaseEntity
 
 # 关闭hystrix
-feign.hystrix.enabled=false
+feign.hystrix.enabled=true
 
 # 使用httpclient，解决@FeignClient的GET方法使用对象参数的问题
 feign.httpclient.enabled=true

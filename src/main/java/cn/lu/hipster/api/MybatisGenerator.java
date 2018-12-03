@@ -114,7 +114,6 @@ public class MybatisGenerator implements Generator {
         String projectPath = generatorParam.getPackageInfo().getProjectPath();
         String javaPath = generatorParam.getPackageInfo().getJavaPath();
         javaModelGeneratorConfiguration.setTargetProject(projectPath + "/" + javaPath);
-//        String basePackage = generatorParam.getPackageInfo().getBasePackage();
         String entityPackage = generatorParam.getPackageInfo().getEntityPackage();
         javaModelGeneratorConfiguration.setTargetPackage(basePackage + "." + entityPackage);
         if (!Strings.isNullOrEmpty(entityBaseClass)) {
