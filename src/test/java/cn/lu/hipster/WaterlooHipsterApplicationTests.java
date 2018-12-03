@@ -79,7 +79,7 @@ public class WaterlooHipsterApplicationTests {
         dependencyHipster.setName("waterloo-hipster");
         dependencyHipster.setGroupId("cn.waterlu");
         dependencyHipster.setArtifactId("waterloo-hipster");
-        dependencyHipster.setVersion("1.0.4");
+        dependencyHipster.setVersion("1.0.5");
         dependencyList.add(dependencyHipster);
         DependencyInfo dependencySwagger = new DependencyInfo();
         dependencySwagger.setName("swagger2");
@@ -181,7 +181,7 @@ public class WaterlooHipsterApplicationTests {
         dependencyHipster.setName("waterloo-hipster");
         dependencyHipster.setGroupId("cn.waterlu");
         dependencyHipster.setArtifactId("waterloo-hipster");
-        dependencyHipster.setVersion("1.0.4");
+        dependencyHipster.setVersion("1.0.5");
         dependencyList.add(dependencyHipster);
         DependencyInfo dependencySwagger = new DependencyInfo();
         dependencySwagger.setName("swagger2");
