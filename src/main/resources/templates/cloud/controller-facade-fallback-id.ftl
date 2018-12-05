@@ -2,7 +2,9 @@ package ${packageName};
 
 import org.springframework.stereotype.Component;
 import cn.lu.web.mvc.BizException;
-import cn.lu.web.mvc.ResponseResult;
+import cn.lu.web.mvc.ListResponseData;
+import cn.lu.web.mvc.ResponseData;
+import cn.lu.web.mvc.SimpleResponseData;
 import cn.lu.web.mvc.ResponseCode;
 import cn.lu.web.vo.ListResultVO;
 
@@ -11,7 +13,7 @@ import ${import.name};
 </#list>
 
 /**
- * ${classRemark}接口
+ * ${classRemark}接口降级逻辑
  *
  * @author ${author}
  * @date ${date}
@@ -27,9 +29,8 @@ public class ${className} implements ${facadeClassName} {
      * @throws BizException
      */
     @Override
-    public ResponseResult<${voClassName}> create(${dtoClassName} param) throws BizException {
-        ResponseResult responseResult = new ResponseResult(ResponseCode.UNAVAILABLE);
-        return responseResult;
+    public ResponseData<${voClassName}> create(${dtoClassName} param) throws BizException {
+        return new ResponseData(ResponseCode.UNAVAILABLE);
     }
 
     /**
@@ -40,9 +41,8 @@ public class ${className} implements ${facadeClassName} {
      * @throws BizException
      */
     @Override
-    public ResponseResult<${voClassName}> get(Long id) throws BizException {
-        ResponseResult responseResult = new ResponseResult(ResponseCode.UNAVAILABLE);
-        return responseResult;
+    public ResponseData<${voClassName}> get(Long id) throws BizException {
+        return new ResponseData(ResponseCode.UNAVAILABLE);
     }
 
     /**
@@ -54,9 +54,8 @@ public class ${className} implements ${facadeClassName} {
      * @throws BizException
      */
     @Override
-    public ResponseResult<String> update(Long id, ${dtoClassName} param) throws BizException {
-        ResponseResult responseResult = new ResponseResult(ResponseCode.UNAVAILABLE);
-        return responseResult;
+    public SimpleResponseData update(Long id, ${dtoClassName} param) throws BizException {
+        return new SimpleResponseData(ResponseCode.UNAVAILABLE);
     }
 
     /**
@@ -67,9 +66,8 @@ public class ${className} implements ${facadeClassName} {
      * @throws BizException
      */
     @Override
-    public ResponseResult<String> delete(Long id) throws BizException {
-        ResponseResult responseResult = new ResponseResult(ResponseCode.UNAVAILABLE);
-        return responseResult;
+    public SimpleResponseData delete(Long id) throws BizException {
+        return new SimpleResponseData(ResponseCode.UNAVAILABLE);
     }
 
     /**
@@ -80,9 +78,8 @@ public class ${className} implements ${facadeClassName} {
      * @throws BizException
      */
     @Override
-    public ResponseResult<ListResultVO<${voClassName}>> query(${paramClassName} queryParam) throws BizException {
-        ResponseResult responseResult = new ResponseResult(ResponseCode.UNAVAILABLE);
-        return responseResult;
+    public ListResponseData<${voClassName}> query(${paramClassName} queryParam) throws BizException {
+        return new ListResponseData(ResponseCode.UNAVAILABLE);
     }
 
     /**
@@ -94,8 +91,7 @@ public class ${className} implements ${facadeClassName} {
      * @throws BizException
      */
     @Override
-    public ResponseResult<ListResultVO<${voClassName}>> queryAll(Integer startRow, Integer pageSize) throws BizException {
-        ResponseResult responseResult = new ResponseResult(ResponseCode.UNAVAILABLE);
-        return responseResult;
+    public ListResponseData<${voClassName}> queryAll(Integer startRow, Integer pageSize) throws BizException {
+        return new ListResponseData(ResponseCode.UNAVAILABLE);
     }
 }

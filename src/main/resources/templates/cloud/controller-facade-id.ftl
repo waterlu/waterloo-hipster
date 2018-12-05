@@ -1,7 +1,9 @@
 package ${packageName};
 
 import cn.lu.web.mvc.BizException;
-import cn.lu.web.mvc.ResponseResult;
+import cn.lu.web.mvc.ListResponseData;
+import cn.lu.web.mvc.ResponseData;
+import cn.lu.web.mvc.SimpleResponseData;
 import cn.lu.web.vo.ListResultVO;
 import cn.lu.web.base.BaseController;
 import cn.lu.web.base.BaseService;
@@ -30,7 +32,7 @@ public interface ${className} {
      * @throws BizException
      */
     @PostMapping(value = "/${classMapping}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    ResponseResult<${voClassName}> create(@RequestBody ${dtoClassName} param) throws BizException;
+    ResponseData<${voClassName}> create(@RequestBody ${dtoClassName} param) throws BizException;
 
     /**
      * 详情
@@ -40,7 +42,7 @@ public interface ${className} {
      * @throws BizException
      */
     @GetMapping(value = "/${classMapping}/{id}")
-    ResponseResult<${voClassName}> get(@PathVariable(value = "id") Long id) throws BizException;
+    ResponseData<${voClassName}> get(@PathVariable(value = "id") Long id) throws BizException;
 
     /**
      * 更新
@@ -51,7 +53,7 @@ public interface ${className} {
      * @throws BizException
      */
     @PutMapping(value = "/${classMapping}/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    ResponseResult<String> update(@PathVariable(value = "id") Long id, @RequestBody ${dtoClassName} param) throws BizException;
+    SimpleResponseData update(@PathVariable(value = "id") Long id, @RequestBody ${dtoClassName} param) throws BizException;
 
     /**
      * 逻辑删除
@@ -60,8 +62,8 @@ public interface ${className} {
      * @return
      * @throws BizException
      */
-    @DeleteMapping(value = "/${classMapping}/{id}")
-    ResponseResult<String> delete(@PathVariable(value = "id") Long id) throws BizException;
+    @DeleteMapping(value = "/${classMapping}/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    SimpleResponseData delete(@PathVariable(value = "id") Long id) throws BizException;
 
     /**
      * 查询
@@ -70,9 +72,8 @@ public interface ${className} {
      * @return
      * @throws BizException
      */
-    @RequestMapping(value = "/${classMapping}/query", consumes = MediaType.APPLICATION_JSON_VALUE,
-        method = {RequestMethod.GET, RequestMethod.POST})
-    ResponseResult<ListResultVO<${voClassName}>> query(@RequestBody ${paramClassName} queryParam) throws BizException;
+    @PostMapping(value = "/${classMapping}/query", consumes = MediaType.APPLICATION_JSON_VALUE)
+    ListResponseData<${voClassName}> query(@RequestBody ${paramClassName} queryParam) throws BizException;
 
     /**
      * 查询所有
@@ -83,6 +84,6 @@ public interface ${className} {
      * @throws BizException
      */
     @GetMapping(value = "/${classMapping}/queryAll")
-    ResponseResult<ListResultVO<${voClassName}>> queryAll(@RequestParam(required = false) Integer startRow,
-        @RequestParam(required = false) Integer pageSize) throws BizException;
+    ListResponseData<${voClassName}> queryAll(@RequestParam(value = "startRow", required = false) Integer startRow,
+        @RequestParam(value = "pageSize", required = false) Integer pageSize) throws BizException;
 }

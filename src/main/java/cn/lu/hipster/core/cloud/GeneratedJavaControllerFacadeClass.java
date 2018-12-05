@@ -39,7 +39,7 @@ public class GeneratedJavaControllerFacadeClass extends AbstractGeneratedJavaTem
         model.setFallbackClassName(fallbackClassName);
 
         // FeignConfig类
-        String feignConfigClassName = String.format("%s.%s.FeignConfig", basePackage, packageInfo.getConfigPackage(), modelName);
+        String feignConfigClassName = String.format("%s.%s.FeignConfig", basePackage, packageInfo.getFacadePackage(), modelName);
         feignConfigClassName = super.parseJavaImportType(feignConfigClassName);
         model.setFeignConfigClassName(feignConfigClassName);
 

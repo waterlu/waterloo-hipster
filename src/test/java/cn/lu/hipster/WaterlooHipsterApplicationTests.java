@@ -175,7 +175,7 @@ public class WaterlooHipsterApplicationTests {
         dependencyWeb.setName("waterloo-web");
         dependencyWeb.setGroupId("cn.waterlu");
         dependencyWeb.setArtifactId("waterloo-starter-web");
-        dependencyWeb.setVersion("1.0.3");
+        dependencyWeb.setVersion("1.0.5");
         dependencyList.add(dependencyWeb);
         DependencyInfo dependencyHipster = new DependencyInfo();
         dependencyHipster.setName("waterloo-hipster");

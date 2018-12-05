@@ -33,7 +33,7 @@ public class GeneratedJavaFeignConfigClass extends AbstractGeneratedJavaClass {
      */
     @Override
     public String getJavaPackageName() {
-        return generatorParam.getPackageInfo().getConfigPackage();
+        return generatorParam.getPackageInfo().getFacadePackage();
     }
 
     /**
