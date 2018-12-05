@@ -1,6 +1,7 @@
 package cn.lu.hipster.api;
 
 import cn.lu.hipster.core.*;
+import cn.lu.hipster.core.cloud.GeneratedJavaErrorCodeClass;
 import cn.lu.hipster.model.GeneratorParam;
 import cn.lu.hipster.model.TableInfo;
 import org.springframework.stereotype.Component;
@@ -46,6 +47,10 @@ public class SpringMVCGenerator implements Generator {
         // ServiceImpl
         GeneratedJavaServiceImplClass javaServiceImplClass = new GeneratedJavaServiceImplClass(generatorParam, tableInfo);
         javaServiceImplClass.generateFile();
+
+        // ErrorCode
+        GeneratedJavaErrorCodeClass errorCodeClass = new GeneratedJavaErrorCodeClass(generatorParam, tableInfo);
+        errorCodeClass.generateFile();
     }
 
     protected void generateModel(GeneratorParam generatorParam, TableInfo tableInfo) throws Exception {

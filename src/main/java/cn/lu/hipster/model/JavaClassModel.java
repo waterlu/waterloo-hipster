@@ -159,4 +159,10 @@ public class JavaClassModel extends DataModel {
      * 项目类型
      */
     protected String projectType = ProjectType.PROJECT_TYPE_BOOT;
+
+    /**
+     * 错误编码起始值
+     *
+     */
+    protected Integer baseErrorCode;
 }

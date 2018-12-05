@@ -70,6 +70,11 @@ public class PackageInfo {
     private String voPackage;
 
     /**
+     * ErrorCode包名
+     */
+    private String exceptionPackage = "exception";
+
+    /**
      * 作者
      */
     @NotBlank

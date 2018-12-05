@@ -57,7 +57,6 @@ public class SpringCloudGenerator implements Generator {
         // FeignConfig
         generatedFileList.add(new GeneratedJavaFeignConfigClass(generatorParam, null));
 
-
         /**
          * 统一生成文件
          */

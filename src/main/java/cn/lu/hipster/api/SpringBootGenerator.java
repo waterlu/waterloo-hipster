@@ -1,6 +1,7 @@
 package cn.lu.hipster.api;
 
 import cn.lu.hipster.core.*;
+import cn.lu.hipster.core.cloud.GeneratedJavaErrorCodeClass;
 import cn.lu.hipster.model.GeneratorParam;
 import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Component;
