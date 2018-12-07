@@ -97,12 +97,6 @@
 			<version>${mysql.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>cn.waterlu</groupId>
-			<artifactId>waterloo-starter-web</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
