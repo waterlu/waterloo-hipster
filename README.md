@@ -105,6 +105,14 @@ public class XxxApplicationTests {
 
 ## 版本变更日志
 
+### v1.0.5
+
+- 支持定制package目录
+
+### v1.0.4
+
+- 支持Spring Cloud项目
+
 ### v1.0.3
 
 - 优化ID和UUID支持

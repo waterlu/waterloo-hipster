@@ -1,6 +1,7 @@
 package cn.lu.hipster.api;
 
 import cn.lu.hipster.core.*;
+import cn.lu.hipster.core.cloud.GeneratedJavaErrorCodeClass;
 import cn.lu.hipster.model.GeneratorParam;
 import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @date 2018/5/25
  */
 @Component
-public class SpringProjectGenerator implements Generator {
+public class SpringBootGenerator implements Generator {
 
     /**
      * 自动生成工程文件

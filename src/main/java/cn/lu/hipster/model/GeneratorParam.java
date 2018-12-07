@@ -22,7 +22,6 @@ public class GeneratorParam {
      * 工程相关信息
      */
     @Valid
-    @JSONField(serialize = false)
     private ProjectInfo projectInfo;
 
     /**

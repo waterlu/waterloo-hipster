@@ -1,5 +1,6 @@
 package ${packageName};
 
+import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 import org.slf4j.Logger;
@@ -35,9 +36,8 @@ import ${import.name};
  * @date ${date}
  */
 @RestController
-@RequestMapping(value = "/${classMapping}")
 @Api(value = "/${classMapping}", description= "${classRemark}接口")
-public class ${className} extends BaseController<${modelClassName}, ${dtoClassName}, ${paramClassName}, ${voClassName}> {
+public class ${className} extends BaseController<${modelClassName}, ${dtoClassName}, ${paramClassName}, ${voClassName}> implements ${facadeClassName} {
 
     @Autowired
     private ${serviceClassName} ${serviceObjectName};
@@ -71,7 +71,7 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      * @return
      * @throws BizException
      */
-    @PostMapping(value = "")
+    @Override
     @ApiOperation(value = "创建${classRemark}", response = ${voClassName}.class, notes = "创建${classRemark}接口描述")
     public ResponseData<${voClassName}> create(@RequestBody @Validated({InsertGroup.class}) ${dtoClassName} param) throws BizException {
         ResponseData responseData = new ResponseData();
@@ -88,7 +88,7 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      * @return
      * @throws BizException
      */
-    @GetMapping(value = "/{id}")
+    @Override
     @ApiOperation(value = "获取${classRemark}详情接口", response = ${voClassName}.class, notes = "获取${classRemark}详情接口描述")
     public ResponseData<${voClassName}> get(@PathVariable Long id) throws BizException {
         ResponseData responseData = new ResponseData();
@@ -110,7 +110,7 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      * @return
      * @throws BizException
      */
-    @PutMapping(value = "/{id}")
+    @Override
     @ApiOperation(value = "更新${classRemark}接口", response = String.class, notes = "更新${classRemark}接口描述")
     public SimpleResponseData update(@PathVariable Long id, @RequestBody @Validated({UpdateGroup.class}) ${dtoClassName} param) throws BizException {
         return super.updateResource(id, param);
@@ -123,8 +123,8 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      * @return
      * @throws BizException
      */
-    @DeleteMapping(value = "/{id}")
-    @ApiOperation(value = "删除${classRemark}接口", response = String.class, notes = "删除${classRemark}接口描述")
+    @Override
+    @ApiOperation(value = "逻辑删除${classRemark}接口", response = String.class, notes = "逻辑删除${classRemark}接口描述")
     public SimpleResponseData delete(@PathVariable Long id) throws BizException {
         return super.deleteResource(id);
     }
@@ -136,7 +136,7 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      * @return
      * @throws BizException
      */
-    @RequestMapping(value = "/query", method = {RequestMethod.GET, RequestMethod.POST})
+    @Override
     @ApiOperation(value = "查询${classRemark}接口", response = ${voClassName}.class, responseContainer = "List", notes = "查询${classRemark}接口描述")
     public ListResponseData<${voClassName}> query(@RequestBody @Validated ${paramClassName} param) throws BizException {
         ListResponseData<${voClassName}> responseData = new ListResponseData();
@@ -165,12 +165,12 @@ public class ${className} extends BaseController<${modelClassName}, ${dtoClassNa
      * @return
      * @throws BizException
      */
-    @GetMapping(value = "/queryAll")
+    @Override
     @ApiOperation(value = "查询所有${classRemark}接口", response = ${voClassName}.class, responseContainer = "List", notes = "查询所有${classRemark}接口描述")
     @ApiImplicitParams({@ApiImplicitParam(name = "startRow", value = "分页开始下标,默认0", dataType = "Integer", required = false),
                         @ApiImplicitParam(name = "pageSize", value = "每页数量,默认为20", dataType = "Integer", required = false)})
     public ListResponseData<${voClassName}> queryAll(@RequestParam(required = false) Integer startRow,
-                                                     @RequestParam(required = false) Integer pageSize) throws BizException {
+                                   @RequestParam(required = false) Integer pageSize) throws BizException {
         ListResponseData<${voClassName}> responseData = new ListResponseData();
         ${paramClassName} param = new ${paramClassName}();
         if (null != startRow) {

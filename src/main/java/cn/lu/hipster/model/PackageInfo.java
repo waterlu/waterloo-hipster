@@ -42,7 +42,7 @@ public class PackageInfo {
     /**
      * facade包名
      */
-    private String facadePackage = "api";
+    private String facadePackage;
 
     /**
      * service包名
@@ -68,6 +68,11 @@ public class PackageInfo {
      * vo包名
      */
     private String voPackage;
+
+    /**
+     * ErrorCode包名
+     */
+    private String exceptionPackage = "exception";
 
     /**
      * 作者

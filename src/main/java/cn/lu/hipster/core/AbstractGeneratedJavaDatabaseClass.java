@@ -5,10 +5,7 @@ import cn.lu.hipster.consts.DBType;
 import cn.lu.hipster.model.*;
 import com.google.common.base.Strings;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.*;
 
 /**
@@ -284,6 +281,11 @@ public abstract class AbstractGeneratedJavaDatabaseClass extends AbstractGenerat
         } else {
             annotation.addProp("required", true);
         }
+        Object defaultValue = field.getColumnDef();
+        if (null != defaultValue) {
+            annotation.addProp("example", defaultValue.toString());
+        }
+
         return annotation;
     }
 

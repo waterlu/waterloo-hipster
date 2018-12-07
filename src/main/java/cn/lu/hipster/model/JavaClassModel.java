@@ -35,6 +35,11 @@ public class JavaClassModel extends DataModel {
     protected String fallbackClassName;
 
     /**
+     * FeignConfig类名（Fegin）
+     */
+    protected String feignConfigClassName;
+
+    /**
      * 类注释
      */
     protected String classRemark;
@@ -154,4 +159,10 @@ public class JavaClassModel extends DataModel {
      * 项目类型
      */
     protected String projectType = ProjectType.PROJECT_TYPE_BOOT;
+
+    /**
+     * 错误编码起始值
+     *
+     */
+    protected Integer baseErrorCode;
 }
