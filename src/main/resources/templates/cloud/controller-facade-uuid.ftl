@@ -62,7 +62,7 @@ public interface ${className} {
      * @return
      * @throws BizException
      */
-    @DeleteMapping(value = "/${classMapping}/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/${classMapping}/{id}")
     SimpleResponseData delete(@PathVariable(value = "id") String id) throws BizException;
 
     /**
